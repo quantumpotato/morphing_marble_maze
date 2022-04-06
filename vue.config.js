@@ -5,3 +5,7 @@ module.exports = {
     proxy: 'http://localhost:4000',
   },
 }
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.publicPath = '/morphing_marble_maze'
+}

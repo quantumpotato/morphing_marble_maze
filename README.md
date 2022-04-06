@@ -1,24 +1,4 @@
-# client
+*Play now:*
+[https://quantumpotato.github.io/morphing_marble_maze/#/](https://quantumpotato.github.io/morphing_marble_maze/#/)
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Arrow keys to move. Walls morph as you step over thresholds. 36 points to win.

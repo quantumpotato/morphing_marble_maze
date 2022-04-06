@@ -34,12 +34,12 @@ body {
     @apply w-12 h-12;
     background: center no-repeat;
     background-size: contain;
-    background-image: url('/images/heart.png');
+    background-image: url('/morphing_marble_maze/images/heart.png');
     &.-half {
-      background-image: url('/images/half-heart.png');
+      background-image: url('/morphing_marble_maze/images/half-heart.png');
     }
     &.-empty {
-      background-image: url('/images/no-heart.png');
+      background-image: url('/morphing_marble_maze/images/no-heart.png');
     }
   }
 }

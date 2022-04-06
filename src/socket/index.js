@@ -1,6 +1,5 @@
 import { range } from 'lodash'
 import { reactive } from 'vue'
-import { Socket } from 'phoenix'
 import ls from 'local-storage-json'
 
 import dummy from './dummy'

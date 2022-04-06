@@ -21,3 +21,8 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+=======
+dist/
+node_modules/
+yarn-error.log
+
