@@ -1,0 +1,186 @@
+body {
+  @apply bg-gray-400;
+}
+
+:root {
+  --size: 4rem;
+  --buff: 0.25rem;
+}
+
+.app-wrapper {
+  @apply flex justify-center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.game-health {
+  @apply absolute flex right-0 top-0;
+  font-size: 2rem;
+}
+
+.game-score {
+  @apply absolute flex left-0 top-0;
+  font-size: 2rem;
+}
+
+.game__wrapper {
+  @apply flex flex-col relative select-none;
+  padding-top: 3.5em; /* for hearts */
+}
+
+.game-health {
+  @apply flex gap-2;
+  &__heart {
+    @apply w-12 h-12;
+    background: center no-repeat;
+    background-size: contain;
+    background-image: url('/images/heart.png');
+    &.-half {
+      background-image: url('/images/half-heart.png');
+    }
+    &.-empty {
+      background-image: url('/images/no-heart.png');
+    }
+  }
+}
+
+.game__board {
+  @apply relative;
+  height: calc(6 * var(--size));
+  width: calc(6 * var(--size));
+}
+
+.game__square {
+  position: absolute;
+  font-size: 4rem;
+  height: calc(var(--size) - 2 * var(--buff));
+  margin: var(--buff);
+  width: calc(var(--size) - 2 * var(--buff));
+}
+
+.game__wall {
+  position: absolute;
+  font-size: 4rem;
+}
+
+.game__wall.-orientation-horizontal {
+  height: calc(2 * var(--buff));
+  margin-top: calc(-1 * var(--buff));
+  width: var(--size)
+}
+
+.game__wall.-orientation-horizontal.-x-7 {
+  display: none;
+}
+
+.game__wall.-orientation-vertical {
+  height: var(--size);
+  margin-left: calc(-1 * var(--buff));
+  /* margin-top: var(--buff); */
+  width: calc(2 * var(--buff))
+}
+
+.game__wall.-orientation-vertical.-y-7 {
+  display: none;
+}
+
+.game__wall.-state-empty:before {
+  position: absolute;
+  content: '';
+}
+
+.game__wall.-state-empty.-orientation-horizontal:before {
+  position: absolute;
+  display: block;
+  border-top: white dashed 1px;
+  left: var(--buff);
+  right: var(--buff);
+  top: 50%;
+}
+
+.game__wall.-state-empty.-orientation-vertical:before {
+  position: absolute;
+  display: block;
+  border-left: white dashed 1px;
+  bottom: var(--buff);
+  left: 50%;
+  top: var(--buff);
+}
+
+.game__wall.-state-sand {
+  @apply bg-yellow-400;
+  z-index: 1;
+}
+
+.game__wall.-state-solid {
+  @apply bg-green-800;
+  z-index: 3;
+}
+
+.game__wall.-state-stone {
+  @apply bg-green-400;
+  z-index: 2;
+}
+
+.game__wall:nhover {
+  outline: 4px solid white;
+  z-index: 3;
+}
+
+@for $i from 0 to 7 {
+  .-floor, .-wall {
+    &.-x-$i {
+      left: calc(($(i) - 1) * var(--size));
+    }
+    &.-y-$i {
+      top: calc(($(i) - 1) * var(--size));
+    }
+  }
+}
+
+.game__player, .game__goal, .game__monster, .game__pawprint, .game__event {
+  @apply absolute flex items-center justify-center font-bold text-white;
+  font-size: 2.5rem;
+  height: var(--size);
+  width: var(--size);
+  transition: 0.25s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.game__pawprint {
+  transition: 0s;
+  z-index: 1;
+}
+
+.game__player-shield {
+  position: absolute;
+  inset: 50%;
+}
+
+.game__player-shield:before {
+  @apply absolute bg-green-400;
+  content: "";
+  display:block;
+  height: var(--buff);
+  left: calc(-1 * var(--size) / 3);
+  width: calc(var(--size) / 1.5);
+  top: calc(var(--size) / 3);
+}
+
+.game__player-shield.-dx-1 {
+  transform: rotate(-90deg);
+}
+
+.game__player-shield.-dx--1 {
+  transform: rotate(90deg);
+}
+
+.game__player-shield.-dy--1 {
+  transform: rotate(180deg);
+}
+
+.game-message {
+  @apply text-center w-full;
+  font-size: 2rem;
+}

@@ -1,0 +1,44 @@
+{
+  "homepage": "https://quantumpotato.github.io/morphing_marble_maze"
+  "name": "morphin_marble_maze",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "eslint \"src/**/*\""
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.0",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "@unrest/eslint-config": "^0.0.5",
+    "@unrest/form": "^0.0.7",
+    "@unrest/tailwind": "^0.1.15",
+    "@unrest/vue": "^0.2.4",
+    "@unrest/vue-mousetrap": "^0.0.7",
+    "@unrest/vue-storage": "^0.0.14",
+    "autoprefixer": "^9",
+    "core-js": "^3.6.5",
+    "postcss": "^7",
+    "postcss-for": "^2.1.1",
+    "postcss-import": "12",
+    "prettier": "^2.5.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@unrest/eslint-config": "^0.0.5",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "gh-pages": "^3.2.3",
+    "postcss-nesting": "^10.0.3",
+    "vue-cli-plugin-tailwind": "~2.2.18"
+  }
+}
