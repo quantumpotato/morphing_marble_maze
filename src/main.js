@@ -9,6 +9,8 @@ import EventLog from './components/EventLog.vue'
 import '@unrest/tailwind/dist.css'
 import './css/index.css'
 
+console.log(1)
+
 createApp(App)
   .use(router)
   .use(unrest.plugin)
