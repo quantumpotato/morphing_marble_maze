@@ -391,7 +391,6 @@ function loopMonsters(maze) {
 
 function pruneHistory(history) {
   while (history.length > maxHistory) {
-    console.log("PRUNE HAPPENS")
     history.shift()
   }
   return history
