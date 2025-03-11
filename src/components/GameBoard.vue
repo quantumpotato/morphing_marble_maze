@@ -45,8 +45,16 @@ const vec = {
     ArrowRight: [1, 0],
     ArrowLeft: [-1, 0],
     ArrowDown: [0, 1],
+    w: [0, -1],
+    d: [1, 0],
+    a: [-1, 0],
+    s: [0, 1]
   },
   news_by_key: {
+    w: 'north',
+    a: 'west',
+    s: 'south',
+    d: 'east',
     ArrowUp: 'north',
     ArrowRight: 'east',
     ArrowLeft: 'west',
@@ -108,7 +116,7 @@ export default {
   computed: {
     mousetrap() {
       return {
-        'up,down,left,right': this.pressArrow,
+        'up,down,left,right,w,a,s,d': this.pressArrow,
       }
     },
     squares() {
